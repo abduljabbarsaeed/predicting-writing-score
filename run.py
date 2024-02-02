@@ -6,15 +6,15 @@ import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import os
-#import argparse
+import argparse
 from keras.preprocessing.sequence import pad_sequences
 
-#parser = argparse.ArgumentParser()
-#parser.add_argument('-t', '--trainortest', required=True)
+parser = argparse.ArgumentParser()
+parser.add_argument('-t', '--trainortest', required=True)
 
-#args = vars(parser.parse_args())
+args = vars(parser.parse_args())
 
-#trainortest = int(args['trainortest'])
+trainortest = int(args['trainortest'])
 
 #df = pd.DataFrame()
 #df_test = pd.DataFrame()
@@ -362,6 +362,7 @@ def testing():
     except Exception as e:
         print(f"An unexpected error while testing: {e}")
 
+
 def main():
     if trainortest == 0:
         training()
@@ -369,6 +370,7 @@ def main():
         testing()
 
     return
+
 
 if __name__=="__main__":
     main()
